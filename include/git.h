@@ -11,7 +11,7 @@ class Git : public BaseVCS
 		virtual ~Git();
 
 		// From BaseVCS
-		virtual const std::string getVCSName();
+		virtual const std::string getVCSName() {return "git";}
 		virtual const std::string getBranchName();
 		virtual const std::string getPatchName();
 		virtual const int32_t getRevisionNumber();

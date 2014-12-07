@@ -11,7 +11,7 @@ class Subversion : public BaseVCS
 		virtual ~Subversion();
 
 		// From BaseVCS
-		virtual const std::string getVCSName();
+		virtual const std::string getVCSName() {return "svn";}
 		virtual const std::string getBranchName();
 		virtual const std::string getPatchName();
 		virtual const int32_t getRevisionNumber();

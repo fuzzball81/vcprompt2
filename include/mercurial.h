@@ -11,7 +11,7 @@ class Mercurial : public BaseVCS
 		virtual ~Mercurial();
 
 		// From BaseVCS
-		virtual const std::string getVCSName();
+		virtual const std::string getVCSName() {return "hg";}
 		virtual const std::string getBranchName();
 		virtual const std::string getPatchName();
 		virtual const int32_t getRevisionNumber();
