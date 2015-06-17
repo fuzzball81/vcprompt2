@@ -6,3 +6,7 @@ A C++ implementation of vcsprompt originally by Greg Ward (https://bitbucket.org
 Build
 ========
 You must have cmake installed to build vcprompt2
+
+Status
+========
+[![Build Status](https://travis-ci.org/fuzzball81/vcprompt2.svg?branch=master)](https://travis-ci.org/fuzzball81/vcprompt2)
