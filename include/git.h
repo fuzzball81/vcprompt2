@@ -1,6 +1,8 @@
 #ifndef GIT_H
 #define GIT_H
 
+#include <stdint.h>
+
 #include "BaseVCS.h"
 
 class Git : public BaseVCS
