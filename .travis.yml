@@ -1,10 +1,14 @@
 language: cpp
-script:
+before_script:
         - mkdir build
         - cd build/
+script:
         - cmake ..
         - make
-        - ctest
+        - ctest -VV
+after_success:
+        - cd ..
+        - rm -rf build/
 compiler:
         - clang
         - gcc
