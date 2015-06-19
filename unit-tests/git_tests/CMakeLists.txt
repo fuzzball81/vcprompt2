@@ -1,8 +1,9 @@
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-add_executable(runUnitTests
+add_executable(testGitInterface
   interface_test.cpp
   ${CMAKE_SOURCE_DIR}/source/git.cpp)
 
 # Standard linking to gtest stuff.
-target_link_libraries(runUnitTests gtest gtest_main)
+target_link_libraries(testGitInterface gtest gtest_main)
+add_test(GitInterfaceTest testGitInterface)
