@@ -4,6 +4,7 @@ script:
         - cd build/
         - cmake ..
         - make
+        - ctest
 compiler:
         - clang
         - gcc
