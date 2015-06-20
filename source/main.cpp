@@ -3,8 +3,6 @@
 
 int main()
 {
-	std::cout << "Hello World" << std::endl;
-
 	DIR *dir;
 	struct dirent *ent;
 	if ((dir = opendir ("./")) != NULL)
@@ -12,7 +10,7 @@ int main()
 		/* print all the files and directories within directory */
 		while ((ent = readdir (dir)) != NULL)
 		{
-			printf ("%s\n", ent->d_name);
+			std::cout << ent->d_name << std::endl;
 		}
 
 		closedir (dir);
@@ -20,8 +18,8 @@ int main()
 	else
 	{
 		/* could not open directory */
-		perror ("");
-		return EXIT_FAILURE;
+		std::cout << "Could not open directory!!" << std::endl;
+		return -1;
 	}
 
 	return 0;
