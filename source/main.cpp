@@ -4,7 +4,7 @@
 
 int main()
 {
-	std::list<std::string> dirs = getDirectories("./");
+	std::list<std::string> dirs = Utils::getDirectories("./");
 
 	for (auto iter = dirs.begin(); iter != dirs.end(); ++iter)
 	{
