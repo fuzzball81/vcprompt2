@@ -1,25 +1,14 @@
 #include <iostream>
-#include <dirent.h>
+
+#include "dirUtil.h"
 
 int main()
 {
-	DIR *dir;
-	struct dirent *ent;
-	if ((dir = opendir ("./")) != NULL)
-	{
-		/* print all the files and directories within directory */
-		while ((ent = readdir (dir)) != NULL)
-		{
-			std::cout << ent->d_name << std::endl;
-		}
+	std::list<std::string> dirs = getDirectories("./");
 
-		closedir (dir);
-	}
-	else
+	for (auto iter = dirs.begin(); iter != dirs.end(); ++iter)
 	{
-		/* could not open directory */
-		std::cout << "Could not open directory!!" << std::endl;
-		return -1;
+		std::cout << "-> " << *iter << std::endl;
 	}
 
 	return 0;
