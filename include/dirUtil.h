@@ -1,5 +1,6 @@
 #pragma once
 
+#include <algorithm>
 #include <dirent.h>
 #include <iostream>
 #include <list>
@@ -37,6 +38,24 @@ namespace Utils
 
 	static VCS::VcsTypes getTypeFromDir(const std::list<std::string> & dirs)
 	{
-		return VCS::NONE;
+		VCS::VcsTypes retType = VCS::NONE;
+		if (std::find(dirs.begin(), dirs.end(), ".git") != dirs.end())
+		{
+			retType = VCS::GIT;
+		}
+		else if (std::find(dirs.begin(), dirs.end(), ".hg") != dirs.end())
+		{
+			retType = VCS::MERCURIAL;
+		}
+		else if (std::find(dirs.begin(), dirs.end(), ".svn") != dirs.end())
+		{
+			retType = VCS::SUBVERSION;
+		}
+		else
+		{
+			retType = VCS::NONE;
+		}
+
+		return retType;
 	}
 }
