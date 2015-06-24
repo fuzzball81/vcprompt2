@@ -1,10 +1,11 @@
 #pragma once
 
+#include <dirent.h>
 #include <iostream>
 #include <list>
 #include <string>
 
-#include <dirent.h>
+#include "VcsTypes.h"
 
 namespace Utils
 {
@@ -32,5 +33,10 @@ namespace Utils
 		}
 
 		return retList;
+	}
+
+	static VCS::VcsTypes getTypeFromDir(const std::list<std::string> & dirs)
+	{
+		return VCS::NONE;
 	}
 }
