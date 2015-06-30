@@ -21,7 +21,10 @@ namespace Utils
 			{
 				while ((ent = readdir (dir)) != NULL)
 				{
-					retList.push_back(std::string(ent->d_name));
+					if (ent->d_type == DT_DIR)
+					{
+						retList.push_back(std::string(ent->d_name));
+					}
 				}
 
 				closedir (dir);
