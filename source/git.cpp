@@ -8,6 +8,11 @@ Git::~Git()
 {
 }
 
+const std::string Git::getVCSName() const
+{
+	return "git";
+}
+
 const std::string Git::getBranchName()
 {
 	return "";
