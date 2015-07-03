@@ -16,10 +16,10 @@ endif()
 include_directories("${CMAKE_SOURCE_DIR}/include")
 
 set(SOURCE "")
-add_subdirectory(source)
 add_subdirectory(3rdParty)
+add_subdirectory(source)
 add_subdirectory(unit-tests)
 
 link_directories("${CMAKE_BINARY_DIR}/3rdParty/libgit2")
 add_executable(vcprompt2 ${SOURCE})
-target_link_libraries (vcprompt2 libgit2.a)
+target_link_libraries (vcprompt2 git2)
