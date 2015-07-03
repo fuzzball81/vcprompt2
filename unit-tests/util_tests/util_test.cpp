@@ -58,3 +58,22 @@ TEST(GetType, SvnReturnsSubversion)
 	ASSERT_EQ(VCS::SUBVERSION, Utils::getTypeFromDir(dirList));
 }
 
+TEST(UpLevel, EmptyPathReturnsSlash)
+{
+	ASSERT_EQ("/", Utils::removePathLevel(""));
+}
+
+TEST(UpLevel, SlashReturnsSlash)
+{
+	ASSERT_EQ("/", Utils::removePathLevel("/"));
+}
+
+TEST(UpLevel, LevelRemoved)
+{
+	ASSERT_EQ("/A", Utils::removePathLevel("/A/B"));
+}
+
+TEST(UpLevel, OneLevelDownReturnsSlash)
+{
+	ASSERT_EQ("/", Utils::removePathLevel("/A"));
+}

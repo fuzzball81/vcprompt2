@@ -4,6 +4,7 @@
 #include <dirent.h>
 #include <iostream>
 #include <list>
+#include <stdlib.h>
 #include <string>
 
 #include "VcsTypes.h"
@@ -60,5 +61,37 @@ namespace Utils
 		}
 
 		return retType;
+	}
+
+	static const std::string getFullPath()
+	{
+		char actualpath [PATH_MAX+1];
+		char *ptr = NULL;
+
+		ptr = realpath("./", actualpath);
+		if (ptr)
+		{
+			std::string path(ptr);
+			return path;
+		}
+		else
+		{
+			return "";
+		}
+	}
+
+	static const std::string removePathLevel(const std::string & path)
+	{
+		std::string retString = "/";
+		if (!path.empty())
+		{
+			size_t pos = path.find_last_of("/");
+			if (pos > 0)
+			{
+				retString.assign(path, 0, pos);
+			}
+		}
+
+		return retString;
 	}
 }
