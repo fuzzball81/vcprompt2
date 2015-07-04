@@ -1,11 +1,14 @@
+#include "git2/global.h"
 #include "git.h"
 
 Git::Git()
 {
+	git_libgit2_init();
 }
 
 Git::~Git()
 {
+	git_libgit2_shutdown();
 }
 
 const std::string Git::getVCSName() const
