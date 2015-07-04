@@ -5,5 +5,5 @@ add_executable(testGitInterface
   ${CMAKE_SOURCE_DIR}/source/git.cpp)
 
 # Standard linking to gtest stuff.
-target_link_libraries(testGitInterface gtest gtest_main)
+target_link_libraries(testGitInterface gtest gtest_main ${LIBS})
 add_test(GitInterfaceTest testGitInterface)
