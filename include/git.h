@@ -9,7 +9,7 @@ class Git : public BaseVCS
 {
 
 	public:
-		Git();
+		Git(const std::string & path);
 		virtual ~Git();
 
 		// From BaseVCS

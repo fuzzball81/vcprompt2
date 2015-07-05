@@ -19,7 +19,7 @@ int main()
 		switch(type)
 		{
 			case VCS::GIT:
-				vcs = new Git();
+				vcs = new Git(path);
 				break;
 			case VCS::MERCURIAL:
 				std::cout << "MERCURIAL REPO!!" << std::endl;

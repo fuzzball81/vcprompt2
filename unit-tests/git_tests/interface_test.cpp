@@ -3,12 +3,12 @@
 
 TEST(GitInterface, NameIsNotEmpty)
 {
-	Git g;
+	Git g("");
 	ASSERT_NE("", g.getVCSName());
 }
 
 TEST(GitInterface, NameIsCorrect)
 {
-	Git g;
+	Git g("");
 	ASSERT_EQ("git", g.getVCSName());
 }

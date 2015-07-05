@@ -1,7 +1,7 @@
 #include "git2/global.h"
 #include "git.h"
 
-Git::Git()
+Git::Git(const std::string & path)
 {
 	git_libgit2_init();
 }
