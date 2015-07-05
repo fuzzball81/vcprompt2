@@ -37,7 +37,7 @@ int main()
 
 	if (vcs)
 	{
-		std::cout << vcs->getVCSName() << std::endl;
+		std::cout << vcs->getVCSName() << " " << vcs->getBranchName() << std::endl;
 		delete vcs;
 	}
 

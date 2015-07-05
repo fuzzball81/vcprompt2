@@ -4,11 +4,14 @@
 Git::Git(const std::string & path)
 {
 	git_libgit2_init();
+	repo = NULL;
+	git_repository_open(&repo, path.c_str());
 }
 
 Git::~Git()
 {
 	git_libgit2_shutdown();
+	git_repository_free(repo);
 }
 
 const std::string Git::getVCSName() const
@@ -18,7 +21,16 @@ const std::string Git::getVCSName() const
 
 const std::string Git::getBranchName()
 {
-	return "";
+	std::string retString = "";
+	const char *branch = NULL;
+	git_reference *head = NULL;
+
+	git_repository_head(&head, repo);
+	git_branch_name(&branch, head);
+	git_reference_free(head);
+
+	retString.assign(branch);
+	return retString;
 }
 
 const std::string Git::getPatchName()

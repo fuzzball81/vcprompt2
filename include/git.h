@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 #include "BaseVCS.h"
+#include "git2.h"
 
 class Git : public BaseVCS
 {
@@ -17,6 +18,9 @@ class Git : public BaseVCS
 		virtual const std::string getBranchName();
 		virtual const std::string getPatchName();
 		virtual const int32_t getRevisionNumber();
+
+	private:
+		git_repository *repo;
 };
 
 #endif
