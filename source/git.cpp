@@ -41,7 +41,8 @@ const std::string Git::getPatchName()
 	return "";
 }
 
-const int32_t Git::getRevisionNumber()
+const std::string Git::getRevisionNumber()
 {
-	return 0;
+	std::string retString = "";
+	return retString;
 }
