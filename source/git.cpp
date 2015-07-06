@@ -53,3 +53,9 @@ const std::string Git::getRevisionNumber()
 
 	return retString;
 }
+
+const std::string Git::getTagName()
+{
+	std::string retString = "";
+	return retString;
+}

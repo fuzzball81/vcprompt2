@@ -18,6 +18,7 @@ class Git : public BaseVCS
 		virtual const std::string getBranchName();
 		virtual const std::string getPatchName();
 		virtual const std::string getRevisionNumber();
+		virtual const std::string getTagName();
 
 	private:
 		git_repository *repo;
