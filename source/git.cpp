@@ -29,7 +29,10 @@ const std::string Git::getBranchName()
 	git_branch_name(&branch, head);
 	git_reference_free(head);
 
-	retString.assign(branch);
+	if (branch)
+	{
+		retString.assign(branch);
+	}
 	return retString;
 }
 
