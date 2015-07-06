@@ -1,5 +1,6 @@
 #include "git.h"
 #include "gtest/gtest.h"
+#include "mockgit2.h"
 
 TEST(GitInterface, NameIsNotEmpty)
 {
@@ -17,4 +18,11 @@ TEST(GitInterface, BranchNameWorksWithNull)
 {
 	Git g("");
 	ASSERT_EQ("", g.getBranchName());
+}
+
+TEST(GitInterface, BranchNameReturnsTestName)
+{
+	Git g("");
+	setupBranch();
+	ASSERT_EQ("test_branch_name", g.getBranchName());
 }

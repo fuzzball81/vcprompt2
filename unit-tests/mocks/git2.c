@@ -1,4 +1,12 @@
 #include "git2.h"
+#include "mockgit2.h"
+
+int set_branch = 0;
+
+void setupBranch(void)
+{
+	set_branch = 1;
+}
 
 int git_libgit2_init(void)
 {
@@ -33,5 +41,10 @@ void git_reference_free(git_reference *ref)
 
 int git_branch_name(const char **out, const git_reference *ref)
 {
+	if (set_branch)
+	{
+		*out = "test_branch_name";
+	}
+
 	return 1;
 }
