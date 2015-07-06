@@ -44,5 +44,12 @@ const std::string Git::getPatchName()
 const std::string Git::getRevisionNumber()
 {
 	std::string retString = "";
+	git_oid oid = {0};
+
+	git_reference_name_to_id(&oid, repo, "HEAD");
+	char shortsha[10] = {0};
+	git_oid_tostr(shortsha, 9, &oid);
+	retString.assign(shortsha);
+
 	return retString;
 }
