@@ -48,3 +48,13 @@ int git_branch_name(const char **out, const git_reference *ref)
 
 	return 1;
 }
+
+int git_reference_name_to_id(git_oid *out, git_repository *repo, const char *name)
+{
+	return 1;
+}
+
+char * git_oid_tostr(char *out, size_t n, const git_oid *id)
+{
+	return "abcdefg";
+}
