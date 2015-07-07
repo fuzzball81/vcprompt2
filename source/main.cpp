@@ -37,7 +37,18 @@ int main()
 
 	if (vcs)
 	{
-		std::cout << vcs->getVCSName() << " " << vcs->getBranchName()  << " " << vcs->getRevisionNumber() << std::endl;
+		std::string name = vcs->getVCSName();
+		std::string branch = vcs->getBranchName();
+		std::string tag = "";
+		std::string rev = vcs->getRevisionNumber();
+
+		if (vcs->getBranchName().empty())
+		{
+			tag = vcs->getTagName();
+		}
+
+		std::string output = name + " " + branch + " " + tag + " " + rev;
+		std::cout << output << std::endl;
 		delete vcs;
 	}
 
